@@ -21,17 +21,14 @@ public class DragAndDropPage {
         this.driver = driver;
     }
 
-    public void dragAndDrop() throws InterruptedException, AWTException {
+    public void dragAndDrop() throws InterruptedException {
         WebElement drag = driver.findElement(colA);
         WebElement drop = driver.findElement(colB);
 
 
         Actions builder = new Actions(this.driver);
-        Thread.sleep(2000);
 
-        Robot robot = new Robot();
-        robot.mouseMove(10,10);
-        builder.clickAndHold(drag).moveToElement(drop).release(drop).build().perform();
+        builder.clickAndHold(drag).moveToElement(drop).release().build().perform();
 //        Action mouseHome = builder.moveToElement(drop).click().build();
 //        mouseHome.perform();
 //
